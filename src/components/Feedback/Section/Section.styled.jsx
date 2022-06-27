@@ -4,7 +4,7 @@ export const Sect = styled.section`
 
 `;
 
-export const Title = styled.h2`
+export const Label = styled.h2`
 color: black;
 font-size: 24px;
 font-weight: 700;

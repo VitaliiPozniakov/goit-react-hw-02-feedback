@@ -1,13 +1,13 @@
 
 import PropTypes from 'prop-types';
-import { Sect, Title } from './Section.styled';
+import { Sect, Label } from './Section.styled';
 
 function Section({ title, children }) {
   return (
-    <section >
-      {title && <h2>{title}</h2>}
+    <Sect >
+      {title && <Label>{title}</Label>}
       {children}
-    </section>
+    </Sect>
   );
 }
 

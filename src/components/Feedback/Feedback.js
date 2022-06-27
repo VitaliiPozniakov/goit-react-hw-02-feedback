@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 // import { PropTypes } from 'prop-types';
-import { Title } from './Feedback.styled';
 import Statistics from './Statistics/Statistics';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Section from './Section/Section';
@@ -53,7 +52,8 @@ class Feedback extends Component {
   render() {
     return (
       <>
-        <Title>Please leave feedback</Title>
+ 
+        <Section title={'Please leave feedback'}></Section>
 
         <FeedbackOptions
           options={{
@@ -64,7 +64,7 @@ class Feedback extends Component {
           onLeaveFeedback={this.handleBtnMouseDownChangeColor}
         />
 
-
+<Section title={'Statistics'}></Section>
 
         <Statistics
           good={this.state.good}
