@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { PropTypes } from 'prop-types';
 import Section from './Section';
 import Statistics from './Statistics';
 import FeedbackOptions from './FeedbackOptions';
@@ -76,7 +75,6 @@ class App extends Component {
     );
   }
 }
-
 
 export default App
 
