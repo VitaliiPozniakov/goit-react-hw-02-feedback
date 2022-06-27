@@ -64,27 +64,21 @@ class App extends Component {
         </Section>
 
         <Section title={'Statistics'}>
-
-        {this.countTotalFeedback() > 0 ? (
-                    <Statistics
-                    good={this.state.good}
-                    neutral={this.state.neutral}
-                    bad={this.state.bad}
-                    total={this.countTotalFeedback()}
-                    positivePercentage={this.countPositiveFeedbackPercentage()}
-                  />
-            ) : (
-              <Notification message="There is no feedback" />
-            )}
-
-
-  
+          {this.countTotalFeedback() > 0 ? (
+            <Statistics
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
+              total={this.countTotalFeedback()}
+              positivePercentage={this.countPositiveFeedbackPercentage()}
+            />
+          ) : (
+            <Notification message="There is no feedback" />
+          )}
         </Section>
       </>
     );
   }
 }
 
-export default App
-
-
+export default App;
