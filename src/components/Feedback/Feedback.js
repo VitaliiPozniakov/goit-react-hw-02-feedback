@@ -52,27 +52,26 @@ class Feedback extends Component {
   render() {
     return (
       <>
- 
-        <Section title={'Please leave feedback'}></Section>
+        <Section title={'Please leave feedback'}>
+          <FeedbackOptions
+            options={{
+              handleGoodIncrement: this.handleGoodIncrement,
+              handleNeutralIncrement: this.handleNeutralIncrement,
+              handleBadIncrement: this.handleBadIncrement,
+            }}
+            onLeaveFeedback={this.handleBtnMouseDownChangeColor}
+          />
+        </Section>
 
-        <FeedbackOptions
-          options={{
-            handleGoodIncrement: this.handleGoodIncrement,
-            handleNeutralIncrement: this.handleNeutralIncrement,
-            handleBadIncrement: this.handleBadIncrement,
-          }}
-          onLeaveFeedback={this.handleBtnMouseDownChangeColor}
-        />
-
-<Section title={'Statistics'}></Section>
-
-        <Statistics
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
-          total={this.countTotalFeedback()}
-          positivePercentage={this.countPositiveFeedbackPercentage()}
-        />
+        <Section title={'Statistics'}>
+          <Statistics
+            good={this.state.good}
+            neutral={this.state.neutral}
+            bad={this.state.bad}
+            total={this.countTotalFeedback()}
+            positivePercentage={this.countPositiveFeedbackPercentage()}
+          />
+        </Section>
       </>
     );
   }
@@ -85,4 +84,3 @@ export default Feedback;
 //     neutral: PropTypes.number.isRequired,
 //     bad: PropTypes.number.isRequired,
 //     }
-
