@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+// import { PropTypes } from 'prop-types';
+import { Title } from './Feedback.styled';
 import Statistics from './Statistics/Statistics';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
-import Section from './Section/Section';
 
 class Feedback extends Component {
   static defaultProps = {
@@ -51,7 +52,7 @@ class Feedback extends Component {
   render() {
     return (
       <>
-        <Section title="Please leave feedback" />
+        <Title>Please leave feedback</Title>
 
         <FeedbackOptions
           options={{
@@ -61,8 +62,6 @@ class Feedback extends Component {
           }}
           onLeaveFeedback={this.handleBtnMouseDownChangeColor}
         />
-
-        <Section title="Statistics" />
 
         <Statistics
           good={this.state.good}
@@ -77,4 +76,10 @@ class Feedback extends Component {
 }
 
 export default Feedback;
+
+// Feedback.prototype = {
+//     good: PropTypes.number.isRequired,
+//     neutral: PropTypes.number.isRequired,
+//     bad: PropTypes.number.isRequired,
+//     }
 

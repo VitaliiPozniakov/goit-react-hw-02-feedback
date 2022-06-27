@@ -1,4 +1,3 @@
-
 import styled from "@emotion/styled";
 
 export const Title = styled.h2`
@@ -10,3 +9,5 @@ letter-spacing: 0.06em;
 text-align: center;
 margin-bottom: 30px;
 `;
+
+
