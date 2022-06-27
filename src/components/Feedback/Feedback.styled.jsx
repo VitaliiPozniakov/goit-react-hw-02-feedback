@@ -18,7 +18,7 @@ margin-bottom: 30px;
 export const Btn = styled.button`
 padding: 10px 32px;
 color: black;
-background-color: white;
+background-color: #ffffffff;
 font-weight: 700;
 font-size: 16px;
 line-height: 1.88;
