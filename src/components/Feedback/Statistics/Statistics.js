@@ -1,22 +1,27 @@
 import React from "react";
+import { Title, Text, Value, } from './Statistics.styled.jsx';
 
-const Statistics = () => {
+const Statistics = ({good, neutral, bad, total, positivePercentage}) => {
+   return (
+    <>
     <Title>Statistics</Title>
     <Text>
-      Good: <Value>{this.state.good}</Value>
+      Good: <Value>{good}</Value>
     </Text>
     <Text>
-      Neutral: <Value>{this.state.neutral}</Value>
+      Neutral: <Value>{neutral}</Value>
     </Text>
     <Text>
-      Bad: <Value>{this.state.bad}</Value>
+      Bad: <Value>{bad}</Value>
     </Text>
     <Text>
-      Total: <Value>{this.countTotalFeedback()}</Value>
+      Total: <Value>{total}</Value>
     </Text>
     <Text>
-      Positive feedback: <Value>{this.countPositiveFeedbackPercentage() ? Math.round( this.countPositiveFeedbackPercentage() * 100) : 0 }%</Value>
+      Positive feedback: <Value>{positivePercentage ? Math.round(positivePercentage * 100) : 0 }%</Value>
     </Text>
+    </>
+   )
 }
 
 export default Statistics

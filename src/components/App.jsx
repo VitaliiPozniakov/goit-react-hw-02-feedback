@@ -14,12 +14,3 @@ import Feedback from "./Feedback/Feedback";
 
 export default App
 
-// const App = () => {
-//   return (
-//     <>
-//       <Feedback />
-//     </>
-//   );
-// };
-
-// export default App
