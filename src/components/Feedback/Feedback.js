@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Title } from './Feedback.styled';
 import Statistics from './Statistics/Statistics';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
+import Section from './Section/Section';
 
 class Feedback extends Component {
   static defaultProps = {
@@ -62,6 +63,8 @@ class Feedback extends Component {
           }}
           onLeaveFeedback={this.handleBtnMouseDownChangeColor}
         />
+
+
 
         <Statistics
           good={this.state.good}

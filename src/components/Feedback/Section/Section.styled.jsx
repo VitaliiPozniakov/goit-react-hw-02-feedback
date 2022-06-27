@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const Section = styled.section`
+export const Sect = styled.section`
 
 `;
 
