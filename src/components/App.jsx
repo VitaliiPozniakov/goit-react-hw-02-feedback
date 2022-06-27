@@ -3,17 +3,16 @@ import Feedback from "./Feedback/Feedback";
 
 
 
-export const App = () => {
+ const App = () => {
   return (
     <>
-  <Feedback> 
-   
-      </Feedback>
+  <Feedback /> 
+  {/* <Feedback initialvalueGood={10} />  */}
     </>
   );
 };
 
-
+export default App
 
 // const App = () => {
 //   return (
