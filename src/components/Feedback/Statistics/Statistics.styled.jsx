@@ -1,3 +1,4 @@
+
 import styled from "@emotion/styled";
 
 export const Title = styled.h2`
@@ -27,5 +28,4 @@ font-weight: 500;
 line-height: 2;
 letter-spacing: 0.06em;
 `;
-
 

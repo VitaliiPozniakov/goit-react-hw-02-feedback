@@ -19,7 +19,6 @@ border: 1px solid rgba(238, 238, 238, 1);
 box-shadow: 0px 4px 4px $button-shadow;
 min-width: 150px;
 max-height: 50 px;
-
 &:not(:last-child) {
     margin-right: 20px;
 `;
