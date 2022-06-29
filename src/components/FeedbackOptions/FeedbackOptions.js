@@ -1,35 +1,22 @@
 import React from 'react';
-import { BtnWraper, Btn } from './FeedbackOptions.styled';
+import { BtnList, BtnItem, Btn } from './FeedbackOptions.styled';
 
-const FeedbackOptions = ({
-  options: { handleGoodIncrement, handleNeutralIncrement, handleBadIncrement },
-  onLeaveFeedback,
-}) => {
+const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <>
-      <BtnWraper>
-        <Btn
-          type="button"
-          onMouseDown={onLeaveFeedback}
-          onClick={handleGoodIncrement}
-        >
-          Good
-        </Btn>
-        <Btn
-          type="button"
-          onMouseDown={onLeaveFeedback}
-          onClick={handleNeutralIncrement}
-        >
-          Neutral
-        </Btn>
-        <Btn
-          type="button"
-          onMouseDown={onLeaveFeedback}
-          onClick={handleBadIncrement}
-        >
-          Bad
-        </Btn>
-      </BtnWraper>
+      <BtnList>
+      {options.map(option => (
+        <BtnItem key={option}>
+          <Btn
+            type="button"
+            name={option}
+            onClick={onLeaveFeedback}
+          >
+            {option}
+          </Btn>
+        </BtnItem>
+      ))}
+      </BtnList>
     </>
   );
 };

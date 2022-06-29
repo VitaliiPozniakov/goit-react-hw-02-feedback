@@ -16,61 +16,48 @@ class App extends Component {
     bad: 0,
   };
 
-  handleGoodIncrement = evt => {
-    this.setState(currentState => ({
-      good: currentState.good + 1,
-    }));
-  };
+  handleClickButton = e => {
+    const option = e.target.name;
 
-  handleBtnMouseDownChangeColor = evt => {
-    evt.target.style.backgroundColor = '#1E90FF';
-    setTimeout(() => {
-      evt.target.style.backgroundColor = '#ffffffff';
-    }, 100);
-  };
-
-  handleNeutralIncrement = evt => {
-    this.setState(currentState => ({
-      neutral: currentState.neutral + 1,
-    }));
-  };
-
-  handleBadIncrement = evt => {
-    this.setState(currentState => ({
-      bad: currentState.bad + 1,
-    }));
+    if (option) {
+      this.setState(prevState => ({ [option]: prevState[option] + 1 }));
+    }
   };
 
   countTotalFeedback = () => {
-    return this.state.good + this.state.neutral + this.state.bad;
+    const { good, neutral, bad } = this.state;
+    return good + neutral + bad;
   };
 
   countPositiveFeedbackPercentage = () => {
-    return this.state.good / this.countTotalFeedback();
+    return Math.round(this.state.good / this.countTotalFeedback() * 100)
+;
   };
 
   render() {
+    const { good, neutral, bad } = this.state;
+    const countTotalFeedback = this.countTotalFeedback();
+    const countPositiveFeedbackPercentage = this.countPositiveFeedbackPercentage();
+    const options = Object.keys(this.state);
+    const handleClickButton = this.handleClickButton;
+
     return (
       <>
         <Section title={'Please leave feedback'}>
           <FeedbackOptions
-            options={{
-              handleGoodIncrement: this.handleGoodIncrement,
-              handleNeutralIncrement: this.handleNeutralIncrement,
-              handleBadIncrement: this.handleBadIncrement,
-            }}
-            onLeaveFeedback={this.handleBtnMouseDownChangeColor}
+            options={options}
+            onLeaveFeedback={handleClickButton}
           />
         </Section>
 
         <Section title={'Statistics'}>
-          {this.countTotalFeedback() > 0 ? (
+          {countTotalFeedback > 0 ? (
             <Statistics
-              good={this.state.good}
-              neutral={this.state.neutral}
-              bad={this.state.bad}
-              total={this.countTotalFeedback()}
-              positivePercentage={this.countPositiveFeedbackPercentage()}
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={countTotalFeedback}
+              positivePercentage={countPositiveFeedbackPercentage}
             />
           ) : (
             <Notification message="There is no feedback" />

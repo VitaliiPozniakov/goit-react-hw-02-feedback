@@ -17,7 +17,7 @@ const Statistics = ({good, neutral, bad, total, positivePercentage}) => {
       Total: <Value>{total}</Value>
     </Text>
     <Text>
-      Positive feedback: <Value>{positivePercentage ? Math.round(positivePercentage * 100) : 0 }%</Value>
+      Positive feedback: <Value>{positivePercentage ? positivePercentage : 0 }%</Value>
     </Text>
     </>
    )
