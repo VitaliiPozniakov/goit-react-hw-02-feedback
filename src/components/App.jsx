@@ -19,9 +19,9 @@ class App extends Component {
   handleClickButton = e => {
     const option = e.target.name;
 
-    if (option) {
+    
       this.setState(prevState => ({ [option]: prevState[option] + 1 }));
-    }
+    
   };
 
   countTotalFeedback = () => {
