@@ -19,9 +19,7 @@ class App extends Component {
   handleClickButton = e => {
     const option = e.target.name;
 
-    
-      this.setState(prevState => ({ [option]: prevState[option] + 1 }));
-    
+    this.setState(prevState => ({ [option]: prevState[option] + 1 }));
   };
 
   countTotalFeedback = () => {
@@ -30,14 +28,14 @@ class App extends Component {
   };
 
   countPositiveFeedbackPercentage = () => {
-    return Math.round(this.state.good / this.countTotalFeedback() * 100)
-;
+    return Math.round((this.state.good / this.countTotalFeedback()) * 100);
   };
 
   render() {
     const { good, neutral, bad } = this.state;
     const countTotalFeedback = this.countTotalFeedback();
-    const countPositiveFeedbackPercentage = this.countPositiveFeedbackPercentage();
+    const countPositiveFeedbackPercentage =
+      this.countPositiveFeedbackPercentage();
     const options = Object.keys(this.state);
     const handleClickButton = this.handleClickButton;
 
